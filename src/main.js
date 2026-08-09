@@ -176,34 +176,64 @@ import { gsap } from "gsap";
 //   },
 // });
 
-const tl = gsap.timeline();
-tl.to(".box1", {
-  x: 900,
-  duration: 1,
-  delay: 2,
-  ease: "power3.out",
-},"amit")
-  .to(".box2", {
+const tl = gsap.timeline({ paused: true });
+tl.to(
+  ".box1",
+  {
     x: 900,
     duration: 1,
     delay: 2,
     ease: "power3.out",
-  },"<")
-  .to(".box3", {
-    x: 900,
-    duration: 1,
-    delay: 2,
-    ease: "power3.out",
-  },0)
-  .to(".box4", {
-    x: 900,
-    duration: 1,
-    delay: 2,
-    ease: "power3.out",
-  },"-=3",)
-  .to(".box5", {
-    x: 900,
-    duration: 1,
-    delay: 2,
-    ease: "power3.out",
-  },"amit");
+  },
+  "amit",
+)
+  .to(
+    ".box2",
+    {
+      x: 900,
+      duration: 1,
+      delay: 2,
+      ease: "power3.out",
+    },
+    "<",
+  )
+  .to(
+    ".box3",
+    {
+      x: 900,
+      duration: 1,
+      delay: 2,
+      ease: "power3.out",
+    },
+    0,
+  )
+  .to(
+    ".box4",
+    {
+      x: 900,
+      duration: 1,
+      delay: 2,
+      ease: "power3.out",
+    },
+    "-=3",
+  )
+  .to(
+    ".box5",
+    {
+      x: 900,
+      duration: 1,
+      delay: 2,
+      ease: "power3.out",
+    },
+    "amit",
+  );
+setTimeout(() => {
+  tl.play();
+}, 4000);
+setTimeout(() => {
+  tl.play();
+}, 4000);
+setTimeout(() => {
+  tl.play();
+}, 4000);
+
