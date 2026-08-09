@@ -77,16 +77,82 @@ import { gsap } from "gsap";
 // gsap.to(".box", { x: "+=50" });  // Element ki current position se 50px aur right jayega.
 // gsap.to(".box", { x: 50 }); // Element ko x = 50px position par le jayega.
 
-document.querySelectorAll(".btn").forEach((btn) => {
-  btn.addEventListener("mouseenter", () => {
-    gsap.to(btn, { scale: 1.08, duration: 0.3, ease: "back.out(2)" });
-    gsap.to(".btn--scale", {
-      boxShadow: "green",
-      backgroundColor: "blue",
-      ease: "elastic.in",
-    });
-  });
-  btn.addEventListener("mouseleave", () => {
-    gsap.to(btn, { scale: 1, duration: 0.3, ease: "power2.out" });
-  });
-});
+// document.querySelectorAll(".btn").forEach((btn) => {
+//   btn.addEventListener("mouseenter", () => {
+//     gsap.to(btn, { scale: 1.08, duration: 0.3, ease: "back.out(2)" });
+//     gsap.to(".btn--scale", {
+//       boxShadow: "green",
+//       backgroundColor: "blue",
+//       ease: "elastic.in",
+//     });
+//   });
+//   btn.addEventListener("mouseleave", () => {
+//     gsap.to(btn, { scale: 1, duration: 0.3, ease: "power2.out" });
+//   });
+// });
+
+// document.querySelectorAll(".btn").forEach((btn) => {
+//   if (btn.classList.contains("btn--scale")) {
+//     btn.addEventListener("mouseenter", () => {
+//       gsap.to(btn, {
+//         boxShadow: "0 0 25px rgba(0, 255, 76, 0.8)",
+//         duration: 0.3,
+//         ease: "power2.out",
+//       });
+//     });
+
+//     btn.addEventListener("mouseleave", () => {
+//       gsap.to(btn, {
+//         boxShadow: "0 0 0px rgba(0, 150, 255, 0)",
+//         duration: 0.3,
+//         ease: "power2.in",
+//       });
+//     });
+//   }
+//   if (btn.classList.contains("btn--glow")) {
+//     btn.addEventListener("mouseenter", () => {
+//       gsap.to(btn, {
+//         boxShadow: "0 0 25px rgba(0, 150, 255, 0.8)",
+//         duration: 0.3,
+//         ease: "power2.out",
+//       });
+//     });
+
+//     btn.addEventListener("mouseleave", () => {
+//       gsap.to(btn, {
+//         boxShadow: "0 0 0px rgba(0, 150, 255, 0)",
+//         duration: 0.3,
+//         ease: "power2.in",
+//       });
+//     });
+//   }
+
+//   if (btn.classList.contains("btn--wiggle")) {
+//     btn.addEventListener("mouseenter", () => {
+//       gsap.to(btn, {
+//         rotation: 8,
+//         duration: 0.1,
+//         repeat: 3,
+//         yoyo: true,
+//         ease: "power1.inOut",
+//       });
+//     });
+
+//     btn.addEventListener("mouseleave", () => {
+//       gsap.to(btn, {
+//         rotation: 0,
+//         duration: 0.2,
+//         ease: "power2.out",
+//       });
+//     });
+//   }
+// });
+
+import { CustomEase } from "gsap/CustomEase";
+gsap.registerPlugin(CustomEase);
+
+CustomEase.create(
+  "myEase",
+  "M0,0 C0.126,0.382 0.282,0.674 0.44,0.822 0.632,1.002 0.818,1 1,1",
+);
+gsap.to(".box", { x: 300, ease: "myEase" });
