@@ -10,9 +10,10 @@ body {
   background-color: black;
 }
 .box {
-  width: 300px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
   background-color: red;
+  margin: 1rem;
 }
 button {
   font-size: 2rem;

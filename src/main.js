@@ -148,11 +148,29 @@ import { gsap } from "gsap";
 //   }
 // });
 
-import { CustomEase } from "gsap/CustomEase";
-gsap.registerPlugin(CustomEase);
+// import { CustomEase } from "gsap/CustomEase";
+// gsap.registerPlugin(CustomEase);
 
-CustomEase.create(
-  "myEase",
-  "M0,0 C0.126,0.382 0.282,0.674 0.44,0.822 0.632,1.002 0.818,1 1,1",
-);
-gsap.to(".box", { x: 300, ease: "myEase" });
+// CustomEase.create(
+//   "myEase",
+//   "M0,0 C0.126,0.382 0.282,0.674 0.44,0.822 0.632,1.002 0.818,1 1,1",
+// );
+// gsap.to(".box", { x: 300, ease: "myEase" });
+gsap.to(".box", {
+  y: 50,
+  duration: 1.5,
+  delay: 2,
+  ease: "power1.out",
+  // stagger: 1.4,
+  // stagger: -1.4,
+  stagger: {
+    each: 0.4,
+    // from: "center",
+    // from: "edges",
+    // from: "end",
+    // from: "random",
+    // from: "start",
+    // from: "4", //index
+    grid: "auto",
+  },
+});
