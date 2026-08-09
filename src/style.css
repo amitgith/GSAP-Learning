@@ -14,3 +14,8 @@ body {
   height: 300px;
   background-color: red;
 }
+button {
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 0.5rem;
+}

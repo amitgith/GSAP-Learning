@@ -76,3 +76,17 @@ import { gsap } from "gsap";
 
 // gsap.to(".box", { x: "+=50" });  // Element ki current position se 50px aur right jayega.
 // gsap.to(".box", { x: 50 }); // Element ko x = 50px position par le jayega.
+
+document.querySelectorAll(".btn").forEach((btn) => {
+  btn.addEventListener("mouseenter", () => {
+    gsap.to(btn, { scale: 1.08, duration: 0.3, ease: "back.out(2)" });
+    gsap.to(".btn--scale", {
+      boxShadow: "green",
+      backgroundColor: "blue",
+      ease: "elastic.in",
+    });
+  });
+  btn.addEventListener("mouseleave", () => {
+    gsap.to(btn, { scale: 1, duration: 0.3, ease: "power2.out" });
+  });
+});
