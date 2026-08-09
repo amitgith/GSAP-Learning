@@ -156,21 +156,54 @@ import { gsap } from "gsap";
 //   "M0,0 C0.126,0.382 0.282,0.674 0.44,0.822 0.632,1.002 0.818,1 1,1",
 // );
 // gsap.to(".box", { x: 300, ease: "myEase" });
-gsap.to(".box", {
-  y: 50,
-  duration: 1.5,
+
+// gsap.to(".box", {
+//   y: 50,
+//   duration: 1.5,
+//   delay: 2,
+//   ease: "power1.out",
+//   // stagger: 1.4,
+//   // stagger: -1.4,
+//   stagger: {
+//     each: 0.4,
+//     // from: "center",
+//     // from: "edges",
+//     // from: "end",
+//     // from: "random",
+//     // from: "start",
+//     // from: "4", //index
+//     grid: "auto",
+//   },
+// });
+
+const tl = gsap.timeline();
+tl.to(".box1", {
+  x: 900,
+  duration: 1,
   delay: 2,
-  ease: "power1.out",
-  // stagger: 1.4,
-  // stagger: -1.4,
-  stagger: {
-    each: 0.4,
-    // from: "center",
-    // from: "edges",
-    // from: "end",
-    // from: "random",
-    // from: "start",
-    // from: "4", //index
-    grid: "auto",
-  },
-});
+  ease: "power3.out",
+},"amit")
+  .to(".box2", {
+    x: 900,
+    duration: 1,
+    delay: 2,
+    ease: "power3.out",
+  },"<")
+  .to(".box3", {
+    x: 900,
+    duration: 1,
+    delay: 2,
+    ease: "power3.out",
+  },0)
+  .to(".box4", {
+    x: 900,
+    duration: 1,
+    delay: 2,
+    ease: "power3.out",
+  },"-=3",)
+  .to(".box5", {
+    x: 900,
+    duration: 1,
+    delay: 2,
+    ease: "power3.out",
+  },"amit");

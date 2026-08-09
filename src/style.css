@@ -15,6 +15,21 @@ body {
   background-color: red;
   margin: 1rem;
 }
+.box1 {
+  background-color: rgb(225, 65, 164);
+}
+.box2 {
+  background-color: royalblue;
+}
+.box3 {
+  background-color: rgb(65, 225, 188);
+}
+.box4 {
+  background-color: rgb(65, 225, 81);
+}
+.box5 {
+  background-color: rgb(94, 225, 65);
+}
 button {
   font-size: 2rem;
   padding: 1rem;
