@@ -26,3 +26,10 @@ import { gsap } from "gsap";
 //   backgroundColor: "pink",
 //   opacity: 0.1,
 // });
+
+gsap.to(".box", {
+  x: 200,
+  duration: 1.5,   // seconds
+  delay: 0.3,      // wait 0.3s before starting
+  ease: "elastic.out(1, 0.4)"
+});
