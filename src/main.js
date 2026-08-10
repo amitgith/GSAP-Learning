@@ -1,5 +1,25 @@
 import "./style.css";
+
 import { gsap } from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+// scrolltrigger
+gsap.to(".box", {
+  x: 600,
+  // duration: 1,
+  ease: "power4.out",
+  scrollTrigger: {
+    trigger: ".box",
+    start: "center 50%",
+    end: "center 30%",
+    scrub: true,
+    pin: true,
+    markers: true,
+  },
+});
 // gsap.to(".box", { x: 900, duration: 2 });
 // const box = document.querySelectorAll(".box")
 
