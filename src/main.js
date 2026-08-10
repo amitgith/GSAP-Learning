@@ -7,21 +7,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 // scrolltrigger
-gsap.to(".box", {
-  x: 600,
-  duration: 1.5,
-  ease: "power4.out",
-  scrollTrigger: {
-    trigger: ".box",
-    start: "center 50%",
-    end: "bottom top",
-    onEnter: () => console.log("entered"),
-    onLeave: () => console.log("left, scrolling down"),
-    onEnterBack: () => console.log("re-entered, scrolling up"),
-    onLeaveBack: () => console.log("left, scrolling up"),
-    markers: true,
-  },
-});
+// gsap.to(".box", {
+//   x: 600,
+//   duration: 1.5,
+//   ease: "power4.out",
+//   scrollTrigger: {
+//     trigger: ".box",
+//     start: "center 50%",
+//     end: "bottom top",
+//     onEnter: () => console.log("entered"),
+//     onLeave: () => console.log("left, scrolling down"),
+//     onEnterBack: () => console.log("re-entered, scrolling up"),
+//     onLeaveBack: () => console.log("left, scrolling up"),
+//     markers: true,
+//   },
+// });
 // gsap.to(".box", { x: 900, duration: 2 });
 // const box = document.querySelectorAll(".box")
 
@@ -409,3 +409,31 @@ gsap.to(".box", {
 //     },
 //     "-=0.8",
 //   );
+
+// ### 🎯 Practice — Part 3
+
+// 1. Build a section that fades and slides in a `<h2>` the first time it scrolls into view, using `toggleActions: "play none none reverse"`.
+gsap.fromTo(
+  ".heading",
+  {
+    opacity: 0,
+    y: 100,
+  },
+  {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    ease: "power3.out",
+
+    scrollTrigger: {
+      trigger: ".heading",
+      start: "top 80%",
+      toggleActions: "play none none reverse",
+      markers: true,
+    },
+  },
+);
+// 2. Build a pinned section (`pin: true`) that stays fixed for `+=800` pixels of scroll while an image scales from 1 to 1.5 via `scrub: 1`.
+
+// 3. Use `ScrollTrigger.batch()` to stagger-reveal a list of 20 items as they scroll into view, instead of writing 20 separate triggers.
+// 4. Add `markers: true` to any of the above, scroll the page, and describe in your own words what the start/end lines represent.

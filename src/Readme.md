@@ -22,3 +22,10 @@
 3. Animate 12 grid items (display: grid) with a 2D stagger using grid: "auto", from: "center". Compare it visually to from: "start".
 4. Create an infinitely rotating loader using repeat: -1 and ease: "linear".
 5. Build a paused timeline and wire up your own Play / Pause / Reverse buttons that call .play(), .pause(), .reverse().
+
+### 🎯 Practice — Part 3
+
+1. Build a section that fades and slides in a `<h2>` the first time it scrolls into view, using `toggleActions: "play none none reverse"`.
+2. Build a pinned section (`pin: true`) that stays fixed for `+=800` pixels of scroll while an image scales from 1 to 1.5 via `scrub: 1`.
+3. Use `ScrollTrigger.batch()` to stagger-reveal a list of 20 items as they scroll into view, instead of writing 20 separate triggers.
+4. Add `markers: true` to any of the above, scroll the page, and describe in your own words what the start/end lines represent.
