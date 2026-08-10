@@ -118,122 +118,205 @@ import { gsap } from "gsap";
 //       });
 //     });
 
-//     btn.addEventListener("mouseleave", () => {
-//       gsap.to(btn, {
-//         boxShadow: "0 0 0px rgba(0, 150, 255, 0)",
-//         duration: 0.3,
-//         ease: "power2.in",
-//       });
-//     });
-//   }
+// //     btn.addEventListener("mouseleave", () => {
+// //       gsap.to(btn, {
+// //         boxShadow: "0 0 0px rgba(0, 150, 255, 0)",
+// //         duration: 0.3,
+// //         ease: "power2.in",
+// //       });
+// //     });
+// //   }
 
-//   if (btn.classList.contains("btn--wiggle")) {
-//     btn.addEventListener("mouseenter", () => {
-//       gsap.to(btn, {
-//         rotation: 8,
-//         duration: 0.1,
-//         repeat: 3,
-//         yoyo: true,
-//         ease: "power1.inOut",
-//       });
-//     });
+// //   if (btn.classList.contains("btn--wiggle")) {
+// //     btn.addEventListener("mouseenter", () => {
+// //       gsap.to(btn, {
+// //         rotation: 8,
+// //         duration: 0.1,
+// //         repeat: 3,
+// //         yoyo: true,
+// //         ease: "power1.inOut",
+// //       });
+// //     });
 
-//     btn.addEventListener("mouseleave", () => {
-//       gsap.to(btn, {
-//         rotation: 0,
-//         duration: 0.2,
-//         ease: "power2.out",
-//       });
-//     });
-//   }
-// });
+// //     btn.addEventListener("mouseleave", () => {
+// //       gsap.to(btn, {
+// //         rotation: 0,
+// //         duration: 0.2,
+// //         ease: "power2.out",
+// //       });
+// //     });
+// //   }
+// // });
 
-// import { CustomEase } from "gsap/CustomEase";
-// gsap.registerPlugin(CustomEase);
+// // import { CustomEase } from "gsap/CustomEase";
+// // gsap.registerPlugin(CustomEase);
 
-// CustomEase.create(
-//   "myEase",
-//   "M0,0 C0.126,0.382 0.282,0.674 0.44,0.822 0.632,1.002 0.818,1 1,1",
-// );
-// gsap.to(".box", { x: 300, ease: "myEase" });
+// // CustomEase.create(
+// //   "myEase",
+// //   "M0,0 C0.126,0.382 0.282,0.674 0.44,0.822 0.632,1.002 0.818,1 1,1",
+// // );
+// // gsap.to(".box", { x: 300, ease: "myEase" });
+
+// // gsap.to(".box", {
+// //   y: 50,
+// //   duration: 1.5,
+// //   delay: 2,
+// //   ease: "power1.out",
+// //   // stagger: 1.4,
+// //   // stagger: -1.4,
+// //   stagger: {
+// //     each: 0.4,
+// //     // from: "center",
+// //     // from: "edges",
+// //     // from: "end",
+// //     // from: "random",
+// //     // from: "start",
+// //     // from: "4", //index
+// //     grid: "auto",
+// //   },
+// // });
+
+// const tl = gsap.timeline({ paused: true });
+// tl.to(
+//   ".box1",
+//   {
+//     x: 900,
+//     duration: 1,
+//     delay: 2,
+//     ease: "power3.out",
+//   },
+//   "amit",
+// )
+//   .to(
+//     ".box2",
+//     {
+//       x: 900,
+//       duration: 1,
+//       delay: 2,
+//       ease: "power3.out",
+//     },
+//     "<",
+//   )
+//   .to(
+//     ".box3",
+//     {
+//       x: 900,
+//       duration: 1,
+//       delay: 2,
+//       ease: "power3.out",
+//     },
+//     0,
+//   )
+//   .to(
+//     ".box4",
+//     {
+//       x: 900,
+//       duration: 1,
+//       delay: 2,
+//       ease: "power3.out",
+//     },
+//     "-=3",
+//   )
+//   .to(
+//     ".box5",
+//     {
+//       x: 900,
+//       duration: 1,
+//       delay: 2,
+//       ease: "power3.out",
+//     },
+//     "amit",
+//   );
+// setTimeout(() => {
+//   tl.play();
+// }, 4000);
+// setTimeout(() => {
+//   tl.play();
+// }, 4000);
+// setTimeout(() => {
+//   tl.play();
+// }, 4000);
+
+// 🎯 Practice — Part 2
+
+// 1. Build a timeline that animates 3 boxes in sequence, then adjust the second tween to start =0.2 seconds early so they slightly overlap.
+
+// const t1 = gsap.timeline();
+// t1.to(".box1", {
+//   x: 900,
+//   duration: 1,
+//   ease: "power3.out",
+// })
+//   .to(
+//     ".box2",
+//     {
+//       x: 900,
+//       duration: 0.2,
+//       ease: "power3.out",
+//     },
+//     "-=0.2",
+//   )
+//   .to(".box3", {
+//     x: 900,
+//     duration: 0.2,
+//     ease: "power3.out",
+//   });
+
+// 2. Add a label "reveal" to a timeline, then make a 4th tween start exactly at that label.
+// const t1 = gsap.timeline();
+// t1.to(".box1", { x: 900, duration: 1, ease: "power3.out" })
+//   .to(
+//     ".box2",
+//     {
+//       x: 900,
+//       duration: 1,
+//       ease: "power3.out",
+//     },
+//     "reveal",
+//   )
+//   .to(".box3", { x: 900, duration: 1, ease: "power3.out" })
+//   .to(".box4", { x: 900, duration: 1, ease: "power3.out" }, "reveal");
+
+// 3. Animate 12 grid items (display: grid) with a 2D stagger using grid: "auto", from: "center". Compare it visually to from: "start".
 
 // gsap.to(".box", {
-//   y: 50,
-//   duration: 1.5,
-//   delay: 2,
-//   ease: "power1.out",
-//   // stagger: 1.4,
-//   // stagger: -1.4,
+//   y: 40,
+//   duration: 1,
 //   stagger: {
-//     each: 0.4,
+//     each: 0.8,
 //     // from: "center",
-//     // from: "edges",
-//     // from: "end",
-//     // from: "random",
-//     // from: "start",
-//     // from: "4", //index
+//     from: "start",
 //     grid: "auto",
 //   },
+//   ease: "power2.out",
 // });
 
-const tl = gsap.timeline({ paused: true });
-tl.to(
-  ".box1",
-  {
-    x: 900,
-    duration: 1,
-    delay: 2,
-    ease: "power3.out",
-  },
-  "amit",
-)
-  .to(
-    ".box2",
-    {
-      x: 900,
-      duration: 1,
-      delay: 2,
-      ease: "power3.out",
-    },
-    "<",
-  )
-  .to(
-    ".box3",
-    {
-      x: 900,
-      duration: 1,
-      delay: 2,
-      ease: "power3.out",
-    },
-    0,
-  )
-  .to(
-    ".box4",
-    {
-      x: 900,
-      duration: 1,
-      delay: 2,
-      ease: "power3.out",
-    },
-    "-=3",
-  )
-  .to(
-    ".box5",
-    {
-      x: 900,
-      duration: 1,
-      delay: 2,
-      ease: "power3.out",
-    },
-    "amit",
-  );
-setTimeout(() => {
-  tl.play();
-}, 4000);
-setTimeout(() => {
-  tl.play();
-}, 4000);
-setTimeout(() => {
-  tl.play();
-}, 4000);
+// 4. Create an infinitely rotating loader using repeat: -1 and ease: "linear".
+// gsap.to(".box", {
+//   duration: 1,
+//   rotation: 360,
+//   repeat: -1,
+//   ease: "linear",
+// });
+// 5. Build a paused timeline and wire up your own Play / Pause / Reverse buttons that call .play(), .pause(), .reverse().
 
+// const tl = gsap.timeline({ paused: true });
+// tl.to(".box", {
+//   duration: 1,
+//   rotation: 360,
+//   repeat: -1,
+//   ease: "linear",
+// });
+
+// const playBtn = document.querySelector("#play");
+// playBtn.addEventListener("click", () => {
+//   tl.play();
+// });
+
+// document.querySelector("#pause").addEventListener("click", () => {
+//   tl.pause();
+// });
+
+// document.querySelector("#reverse").addEventListener("click", () => {
+//   tl.reverse();
+// });

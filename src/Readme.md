@@ -14,3 +14,11 @@
 3. Use fromTo() to animate an element's opacity from 0 to 1 and scale from 0.5 to 1, over 1 second.
 4. Create a plain object { score: 0 } and tween its score to 500 over 3 seconds, logging the rounded value on every update.
 5. What's the difference between x: "+=50" and x: 50?
+
+🎯 Practice — Part 2
+
+1. Build a timeline that animates 3 boxes in sequence, then adjust the second tween to start =0.2 seconds early so they slightly overlap.
+2. Add a label "reveal" to a timeline, then make a 4th tween start exactly at that label.
+3. Animate 12 grid items (display: grid) with a 2D stagger using grid: "auto", from: "center". Compare it visually to from: "start".
+4. Create an infinitely rotating loader using repeat: -1 and ease: "linear".
+5. Build a paused timeline and wire up your own Play / Pause / Reverse buttons that call .play(), .pause(), .reverse().
